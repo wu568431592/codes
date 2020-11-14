@@ -1,30 +1,51 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <a-layout id="components-layout-demo-custom-trigger">
+    <Menu :collapsed="collapsed"/>
+    <a-layout>
+      <Header :collapsed="collapsed" @collapsed-change="handleCollapsedChange"/>
+      <a-layout-content
+        class="layout-content"
+      >
+        <router-view/>
+      </a-layout-content>
+    </a-layout>
+  </a-layout>
 </template>
+<script lang="ts">
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+import { defineComponent, ref } from 'vue'
+import Menu from './components/Menu.vue'
+import Header from './components/Header.vue'
+export default defineComponent({
+  components: {
+    Menu,
+    Header
+  },
+  setup () {
+    const collapsed = ref(false)
+    const handleCollapsedChange = () => {
+      collapsed.value = !collapsed.value
     }
+    return {
+      collapsed,
+      handleCollapsedChange
+    }
+  }
+})
+</script>
+<style lang="less">
+#app{
+  width:100%;
+  height:100vh;
+}
+.ant-layout{
+  height:100%;
+  .layout-content{
+    padding:20px;
+    background: #fff;
+    margin:10px 20px;
+    overflow-x:hidden;
+    overflow-y: auto;
   }
 }
 </style>
