@@ -1,46 +1,35 @@
 <template>
-  <a-breadcrumb :routes="routes" class="bread">
-    <template #itemRender="{ route, routes, paths }">
-      <span v-if="routes.indexOf(route) === routes.length - 1">
-        {{route.breadcrumbName}}
-      </span>
-      <router-link v-else :to="paths.join('/')">
-        {{route.breadcrumbName}}
-      </router-link>
+  <a-breadcrumb class="bread">
+    <template v-if="matched.length > 0">
+      <a-breadcrumb-item
+        v-for="item in matched"
+        :key="item.path">
+        <router-link :to="item.path">
+          {{item.meta.breadcrumbName}}
+        </router-link>
+      </a-breadcrumb-item>
     </template>
   </a-breadcrumb>
 </template>
 <script lang="ts">
-import { useRouter, RouteRecordNormalized } from 'vue-router'
-import { defineComponent } from 'vue'
+import { useRoute } from 'vue-router'
+import { defineComponent, watch, toRefs, reactive } from 'vue'
 
-export interface Route {
-  path: string;
-  breadcrumbName: string;
-  children?: Array<Route>;
-}
 export default defineComponent({
   setup () {
-    const router = useRouter()
-    const allRoutes = router.getRoutes()
-    const computedRoutes = (routes: RouteRecordNormalized[]) => {
-      const res = [] as Route[]
-      routes.forEach(route => {
-        const obj: Route = {
-          path: route.path,
-          breadcrumbName: route.meta.breadcrumbName
-        }
-        if (route.children) {
-          obj.children = computedRoutes(route.children as RouteRecordNormalized[])
-        }
-        res.push(obj)
-      })
-      return res
-    }
-    const routes = computedRoutes(allRoutes)
-    return {
-      routes
-    }
+    const route = useRoute()
+    const state = reactive({
+      matched: route.matched
+    })
+    console.log(route, route.matched)
+    // 监听路由变化
+    watch(() => route, route => {
+      state.matched = route.matched
+    }, {
+      immediate: true,
+      deep: true
+    })
+    return { ...toRefs(state) }
   }
 })
 </script>
