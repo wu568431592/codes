@@ -1,5 +1,5 @@
 <template>
-  <span class="anticon"><i :class="type" aria-hidden="true"></i></span>
+  <span class="anticon"><i :class="['fa',type]" aria-hidden="true"></i></span>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'

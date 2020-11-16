@@ -6,7 +6,7 @@ export const routes: Array<RouteRecordRaw> = [
     name: 'Home',
     meta: {
       breadcrumbName: 'Home',
-      icon: 'fa fa-address-book'
+      icon: 'fa-home'
     },
     component: () => import('@/views/Home.vue')
   }, {
@@ -14,16 +14,15 @@ export const routes: Array<RouteRecordRaw> = [
     name: 'CSS',
     meta: {
       breadcrumbName: 'CSS',
-      icon: 'fa fa-address-book'
+      icon: 'fa-css3'
     },
-    component: () => import('@/views/Flex.vue'),
+    component: () => import('@/layout/index.vue'),
     children: [
       {
         path: '/CSS/flex',
         name: 'flex',
         meta: {
-          breadcrumbName: 'flex',
-          icon: 'fa fa-address-book'
+          breadcrumbName: 'flex'
         },
         component: () => import('@/views/Flex.vue')
       }

@@ -95,6 +95,184 @@
       <ul class="flex-box justify-content space-around">
         <li class="flex-item" v-for="item in list" :key="item">{{item}}</li>
       </ul>
+      <h3>2-5. align-items</h3>
+      <p>定义项目在交叉轴上如何对齐</p>
+      <pre>
+        .box {
+          align-items: flex-start | flex-end | center | baseline | stretch;
+        }
+      </pre>
+      <p>align-items: flex-start; 交叉轴起点对齐</p>
+      <ul class="flex-box" style="align-items: flex-start">
+        <li class="flex-item" v-for="item in list" :key="item" :style="{height: `${Math.random()*50 + 50}px`}">{{item}}</li>
+      </ul>
+      <p>align-items: flex-end; 交叉轴终点对齐</p>
+      <ul class="flex-box" style="align-items: flex-end">
+        <li class="flex-item" v-for="item in list" :key="item" :style="{height: `${Math.random()*50 + 50}px`}">{{item}}</li>
+      </ul>
+      <p>align-items: center; 交叉轴中点对齐</p>
+      <ul class="flex-box" style="align-items: center">
+        <li class="flex-item" v-for="item in list" :key="item" :style="{height: `${Math.random()*50 + 50}px`}">{{item}}</li>
+      </ul>
+      <p>align-items: baseline; 项目的第一行文字的基线对齐。</p>
+      <ul class="flex-box" style="align-items: baseline">
+        <li class="flex-item" v-for="item in list" :key="item" :style="{height: `${Math.random()*50 + 50}px`}">{{item}}</li>
+      </ul>
+      <p>align-items: stretch; （默认值）如果项目未设置高度或设为auto，将占满整个容器的高度。</p>
+      <ul class="flex-box" style="align-items: stretch;height:200px">
+        <li class="flex-item" v-for="item in list" :key="item" style="height:auto">{{item}}</li>
+      </ul>
+      <h3>2.6 align-content: 属性定义了多根x轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</h3>
+      <pre>
+        .box {
+          align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+        }
+      </pre>
+      <p>align-content: flex-start; 与交叉轴的起点对齐</p>
+      <ul class="flex-box" style="height:200px; justify-content: flex-start; flex-wrap: wrap;align-content: flex-start">
+        <li class="flex-item" v-for="item in list" :key="item" style="height:auto">{{item}}</li>
+        <li class="flex-item" v-for="item in list" :key="item" style="height:auto">{{item + 10}}</li>
+      </ul>
+      <p>align-content: flex-end; 与交叉轴的终点对齐</p>
+      <ul class="flex-box" style="height:200px; justify-content: flex-start; flex-wrap: wrap;align-content: flex-end">
+        <li class="flex-item" v-for="item in list" :key="item" style="height:auto">{{item}}</li>
+        <li class="flex-item" v-for="item in list" :key="item" style="height:auto">{{item + 10}}</li>
+      </ul>
+      <p>align-content: center; 与交叉轴的中点对齐</p>
+      <ul class="flex-box" style="height:200px; justify-content: flex-start; flex-wrap: wrap;align-content: center">
+        <li class="flex-item" v-for="item in list" :key="item" style="height:auto">{{item}}</li>
+        <li class="flex-item" v-for="item in list" :key="item" style="height:auto">{{item + 10}}</li>
+      </ul>
+      <p>align-content: space-between;与交叉轴两端对齐，轴线之间的间隔平均分布。</p>
+      <ul class="flex-box" style="height:200px; justify-content: flex-start; flex-wrap: wrap;align-content: space-between">
+        <li class="flex-item" v-for="item in list" :key="item" style="height:auto">{{item}}</li>
+        <li class="flex-item" v-for="item in list" :key="item" style="height:auto">{{item + 10}}</li>
+        <li class="flex-item" v-for="item in list" :key="item" style="height:auto">{{item + 20}}</li>
+      </ul>
+      <p>align-content: space-around; 每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</p>
+      <ul class="flex-box" style="height:200px; justify-content: flex-start; flex-wrap: wrap;align-content: space-around">
+        <li class="flex-item" v-for="item in list" :key="item" style="height:auto">{{item}}</li>
+        <li class="flex-item" v-for="item in list" :key="item" style="height:auto">{{item + 10}}</li>
+        <li class="flex-item" v-for="item in list" :key="item" style="height:auto">{{item + 20}}</li>
+      </ul>
+      <p>align-content: stretch; （默认值）：轴线占满整个交叉轴。</p>
+      <ul class="flex-box" style="height:200px; justify-content: flex-start; flex-wrap: wrap;align-content: stretch">
+        <li class="flex-item" v-for="item in list" :key="item" style="height:auto">{{item}}</li>
+        <li class="flex-item" v-for="item in list" :key="item" style="height:auto">{{item + 10}}</li>
+        <li class="flex-item" v-for="item in list" :key="item" style="height:auto">{{item + 20}}</li>
+      </ul>
+      <h2>3. 项目的属性</h2>
+      <p>项目上有留个属性</p>
+      <ul>
+        <li>order</li>
+        <li>flex-grow</li>
+        <li>flex-shrink</li>
+        <li>flex-basis</li>
+        <li>flex</li>
+        <li>align-self</li>
+      </ul>
+      <h3>3-1. order: 定义项目的排列顺序，数值越小。排列越靠前。默认为0</h3>
+      <pre>
+        .item {
+          order: integer;
+        }
+      </pre>
+      <ul class="flex-box">
+        <li
+          class="flex-item"
+          v-for="item in list"
+          :key="item"
+          :style="{order: item === 9? -1: 0}">{{item}}</li>
+      </ul>
+      <h3>3-2. flex-grow: 定义项目的放大比例。默认为0，即如果存在剩余空间也不放大</h3>
+      <p>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
+      <pre>
+        .item {
+          flex-grow: number ; /* default 0 */
+        }
+      </pre>
+      <ul class="flex-box">
+        <li
+          class="flex-item"
+          v-for="item in list"
+          :key="item"
+          :style="{flexGrow: item%2 ===1 ? 1: 2}">{{item}}</li>
+      </ul>
+      <h3>3-3. flex-shrink: 定义项目的缩小比例。默认为1，即如果存在剩余空间不足该项目将缩小</h3>
+      <p>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。
+        <br/>负值对该属性无效。
+      </p>
+      <pre>
+        .item {
+          flex-shrink: number ; /* default 1 */
+        }
+      </pre>
+      <ul class="flex-box" style="width: 300px">
+        <li
+          class="flex-item"
+          v-for="item in list"
+          :key="item"
+          :style="{flexShrink: item ===0 ? 0: 1}">{{item}}</li>
+      </ul>
+      <h3>3-4. flex-basis: 属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</h3>
+      <pre>
+        .item {
+          flex-basis: length | auto; /* default auto */
+        }
+      </pre>
+      <ul class="flex-box" >
+        <li
+          class="flex-item"
+          v-for="item in list"
+          :key="item"
+          :style="{flexBasis: item === 0 ? '100px': 'auto'}">{{item}}</li>
+      </ul>
+      <ul class="flex-box" style="justify-content: space-between; flex-wrap:wrap; overflow:hidden;">
+        <li
+          class="flex-item"
+          v-for="item in list"
+          :key="item"
+          :style="{flexBasis: '30%', flexShrink: 0, flexGrow: 0,display:'block',maxWidth: '30%'}">{{item}}</li>
+      </ul>
+      <h3>3.5 flex: 是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</h3>
+      <pre>
+        .item {
+          flex: none |  'flex-grow' ['flex-shrink' || 'flex-basis']
+        }
+      </pre>
+      <p>
+        该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。<br/>
+        建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。
+      </p>
+      <p>flex: auto</p>
+      <ul class="flex-box" style="">
+        <li
+          class="flex-item"
+          v-for="item in list"
+          :key="item"
+          :style="{flex: '1 1 auto'}">{{item}}</li>
+      </ul>
+      <p>flex: none</p>
+      <ul class="flex-box" style="">
+        <li
+          class="flex-item"
+          v-for="item in list"
+          :key="item"
+          :style="{flex: '0 0 auto'}">{{item}}</li>
+      </ul>
+      <h3>3-6. align-self:align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</h3>
+      <pre>
+        .item {
+          align-self: auto | flex-start | flex-end | center | baseline | stretch;
+        }
+      </pre>
+      <ul class="flex-box" style="flex-direction: row;align-item: flex-start">
+        <li
+          class="flex-item"
+          v-for="item in list"
+          :key="item"
+          :style="{alignSelf: item==5? 'center': 'auto',height: `${Math.random()*50 + 50}px`}">{{item}}</li>
+      </ul>
     </div>
   </div>
 </template>
@@ -110,6 +288,9 @@ export default defineComponent({
 })
 </script>
 <style lang="less" scoped>
+ul{
+  padding: 0;
+}
 .container{
   width: 100%;
   min-height: 100vh;

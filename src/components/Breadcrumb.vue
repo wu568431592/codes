@@ -2,9 +2,12 @@
   <a-breadcrumb class="bread">
     <template v-if="matched.length > 0">
       <a-breadcrumb-item
-        v-for="item in matched"
+        v-for="(item,index) in matched"
         :key="item.path">
-        <router-link :to="item.path">
+        <span v-if=" index === matched.length-1">
+          {{item.meta.breadcrumbName}}
+        </span>
+        <router-link v-else :to="item.path">
           {{item.meta.breadcrumbName}}
         </router-link>
       </a-breadcrumb-item>
