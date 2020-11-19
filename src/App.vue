@@ -5,6 +5,7 @@
       <Header :collapsed="collapsed" @collapsed-change="handleCollapsedChange"/>
       <a-layout-content
         class="layout-content"
+        id="layout-content"
       >
         <router-view/>
       </a-layout-content>

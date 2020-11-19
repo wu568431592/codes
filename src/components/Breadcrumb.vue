@@ -24,7 +24,6 @@ export default defineComponent({
     const state = reactive({
       matched: route.matched
     })
-    console.log(route, route.matched)
     // 监听路由变化
     watch(() => route, route => {
       state.matched = route.matched

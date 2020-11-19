@@ -1,7 +1,7 @@
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, Ref } from 'vue'
 
-export default function useTimeCountDown (time: any) {
-  let timer: any = null
+export default function useTimeCountDown (time: Ref<number>) {
+  let timer: number | any = null
   onMounted(() => {
     timer = setInterval(() => {
       time.value = time.value + 1000

@@ -25,6 +25,30 @@ export const routes: Array<RouteRecordRaw> = [
           breadcrumbName: 'flex'
         },
         component: () => import('@/views/Flex.vue')
+      }, {
+        path: '/CSS/lazyLoad',
+        name: 'lazyLoad',
+        meta: {
+          breadcrumbName: 'lazyLoad'
+        },
+        component: () => import('@/layout/index.vue')
+      }
+    ]
+  }, {
+    path: '/javaScript',
+    name: 'javascript',
+    meta: {
+      breadcrumbName: 'JavaScript'
+    },
+    component: () => import('@/layout/index.vue'),
+    children: [
+      {
+        path: '/javaScript/base',
+        name: 'base',
+        meta: {
+          breadcrumbName: 'base'
+        },
+        component: () => import('@/views/js/base.vue')
       }
     ]
   }

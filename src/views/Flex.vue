@@ -271,7 +271,12 @@
           class="flex-item"
           v-for="item in list"
           :key="item"
-          :style="{alignSelf: item==5? 'center': 'auto',height: `${Math.random()*50 + 50}px`}">{{item}}</li>
+          :style="{alignSelf: item===5? 'flex-end': 'auto',height: `${Math.random()*50 + 50}px`}">{{item}}</li>
+      </ul>
+      <ul class="flex-box" style="width:300px">
+        <li class="flex-item" style="flex:1;width:auto;">1</li>
+        <li class="flex-item" style="flex:1;width:auto;">2</li>
+        <li class="flex-item" style="width:400px">3</li>
       </ul>
     </div>
   </div>
