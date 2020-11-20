@@ -31,14 +31,15 @@ export const routes: Array<RouteRecordRaw> = [
         meta: {
           breadcrumbName: 'lazyLoad'
         },
-        component: () => import('@/layout/index.vue')
+        component: () => import('@/views/LazyLoad.vue')
       }
     ]
   }, {
     path: '/javaScript',
     name: 'javascript',
     meta: {
-      breadcrumbName: 'JavaScript'
+      breadcrumbName: 'JavaScript',
+      icon: 'fa-code'
     },
     component: () => import('@/layout/index.vue'),
     children: [

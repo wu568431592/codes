@@ -12,8 +12,8 @@
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
 export default defineComponent({
   setup () {
-    const demo2 = ref()
     const demo1 = ref<Element>(document.createElement('img'))
+    const demo2 = ref()
     const observer = new IntersectionObserver((changes) => {
       changes.forEach((change) => {
         if (change.isIntersecting) {
