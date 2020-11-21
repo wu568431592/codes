@@ -1,5 +1,5 @@
 <template>
-  <div class="flex">
+  <div class="flex nice-content">
     <div class="container">
       <h1>学习flex布局</h1>
       <h2>1. 了解flex布局</h2>
@@ -293,13 +293,13 @@ export default defineComponent({
 })
 </script>
 <style lang="less" scoped>
+@import url('../../assets/css/nice.css');
 ul{
   padding: 0;
 }
 .container{
   width: 100%;
   min-height: 100vh;
-  background-color: #fff;
   padding:10px 20px;
   .flex-item{
     width:50px;

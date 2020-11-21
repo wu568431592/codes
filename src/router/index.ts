@@ -24,14 +24,14 @@ export const routes: Array<RouteRecordRaw> = [
         meta: {
           breadcrumbName: 'flex'
         },
-        component: () => import('@/views/Flex.vue')
+        component: () => import('@/views/css/Flex.vue')
       }, {
-        path: '/CSS/lazyLoad',
-        name: 'lazyLoad',
+        path: '/CSS/BFC',
+        name: 'BFC',
         meta: {
-          breadcrumbName: 'lazyLoad'
+          breadcrumbName: 'BFC'
         },
-        component: () => import('@/views/LazyLoad.vue')
+        component: () => import('@/views/css/BFC.vue')
       }
     ]
   }, {
@@ -44,12 +44,12 @@ export const routes: Array<RouteRecordRaw> = [
     component: () => import('@/layout/index.vue'),
     children: [
       {
-        path: '/javaScript/base',
-        name: 'base',
+        path: '/javaScript/lazyLoad',
+        name: 'lazyLoad',
         meta: {
-          breadcrumbName: 'base'
+          breadcrumbName: 'lazyLoad'
         },
-        component: () => import('@/views/js/base.vue')
+        component: () => import('@/views/js/LazyLoad.vue')
       }
     ]
   }
