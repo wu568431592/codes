@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="container example">
-      <p>BFC区域不会与float box重叠（</p>
+      <p>BFC区域不会与float box重叠</p>
       <div class="left"></div>
       <div class="right"></div>
     </div>
