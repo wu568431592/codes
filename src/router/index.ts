@@ -32,6 +32,13 @@ export const routes: Array<RouteRecordRaw> = [
           breadcrumbName: 'BFC'
         },
         component: () => import('@/views/css/BFC.vue')
+      }, {
+        path: '/CSS/Layout',
+        name: 'Layout',
+        meta: {
+          breadcrumbName: 'Layout'
+        },
+        component: () => import('@/views/css/Layout.vue')
       }
     ]
   }, {
@@ -50,6 +57,24 @@ export const routes: Array<RouteRecordRaw> = [
           breadcrumbName: 'lazyLoad'
         },
         component: () => import('@/views/js/LazyLoad.vue')
+      }
+    ]
+  }, {
+    path: '/html',
+    name: 'html',
+    meta: {
+      breadcrumbName: 'html',
+      icon: 'fa-html5'
+    },
+    component: () => import('@/layout/index.vue'),
+    children: [
+      {
+        path: '/html/index',
+        name: 'index',
+        meta: {
+          breadcrumbName: 'index'
+        },
+        component: () => import('@/views/html/index.vue')
       }
     ]
   }

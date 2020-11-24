@@ -49,7 +49,6 @@ export default defineComponent({
 })
 </script>
 <style lang="less" scoped>
-@import url('../../assets/css/nice.css');
 .BFC{
   .example{
     border: 2px dashed #ddd;

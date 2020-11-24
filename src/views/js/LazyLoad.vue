@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="box">
+    <div class="box" id="box">
       long long age
     </div>
     <img ref="demo1" data-src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg" alt="">

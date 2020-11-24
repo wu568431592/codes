@@ -278,6 +278,12 @@
         <li class="flex-item" style="flex:1;width:auto;">2</li>
         <li class="flex-item" style="width:400px">3</li>
       </ul>
+      <h2>使用flex实现一个三点的色子</h2>
+      <ul class="saizi_box">
+        <li class="saizi">1</li>
+        <li class="saizi">2</li>
+        <li class="saizi">3</li>
+      </ul>
     </div>
   </div>
 </template>
@@ -293,7 +299,31 @@ export default defineComponent({
 })
 </script>
 <style lang="less" scoped>
-@import url('../../assets/css/nice.css');
+.saizi_box{
+  list-style: none;
+  width:300px;
+  height:300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding:20px;
+  .saizi{
+    width:50px;
+    height:50px;
+    background: #ddd;
+    color:#333;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 50px;
+    &:nth-child(2){
+      align-self: center;
+    }
+    &:nth-child(3){
+       align-self: flex-end;
+    }
+  }
+}
 ul{
   padding: 0;
 }
