@@ -22,6 +22,14 @@ export default defineComponent({
     Menu,
     Header
   },
+  watch: {
+    info: {
+      handler: function (oldVal, newVal) {
+        console.log(oldVal, newVal)
+      },
+      deep: true
+    }
+  },
   setup () {
     const collapsed = ref(false)
     const handleCollapsedChange = () => {
