@@ -77,6 +77,38 @@ export const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/html/index.vue')
       }
     ]
+  }, {
+    path: '/vue',
+    name: 'vue',
+    meta: {
+      breadcrumbName: 'vue',
+      icon: 'fa-vimeo'
+    },
+    component: () => import('@/layout/index.vue'),
+    children: [
+      {
+        path: '/vue/isComponent',
+        name: '动态组件',
+        meta: {
+          breadcrumbName: '动态组件'
+        },
+        component: () => import('@/views/vue/IsComponent.vue')
+      }, {
+        path: '/vue/importComponent',
+        name: '异步组件',
+        meta: {
+          breadcrumbName: '异步组件'
+        },
+        component: () => import('@/views/vue/ImportComponent.vue')
+      }, {
+        path: '/vue/Slot',
+        name: '插槽',
+        meta: {
+          breadcrumbName: '插槽'
+        },
+        component: () => import('@/views/vue/Slot.vue')
+      }
+    ]
   }
 ]
 
